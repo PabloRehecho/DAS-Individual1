@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">ProyectoIndividual</string>
+    <string name="TextViewPrincipal">Inicia sesión o registrate</string>
+    <string name="EditTextUsuario">Usuario</string>
+    <string name="EditTextContraseña">Contraseña</string>
+    <string name="BotonIniciarSesión">Iniciar Sesión</string>
+    <string name="BotonRegistrarse">Registrarse</string>
+
+    <string name="EditTextUsuarioNuevo">Escribe un nombre de usuario</string>
+    <string name="EditTextContraseñaNueva">Escribe la contraseña</string>
+    <string name="EditTextRepetirContraseña">Repite la contraseña</string>
+    <string name="BotonTerminarRegistro">Registrar Usuario</string>
+</resources>
