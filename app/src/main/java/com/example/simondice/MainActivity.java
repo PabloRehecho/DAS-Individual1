@@ -6,8 +6,6 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.simondice.Registro;
-
 public class MainActivity extends AppCompatActivity
 {
     @Override
@@ -18,11 +16,12 @@ public class MainActivity extends AppCompatActivity
     }
     public void onClickIniciarSesion(View v)
     {
-
+        Intent intentRegistro= new Intent(MainActivity.this, MenuActivity.class);
+        startActivity(intentRegistro);
     }
     public void onClickRegistrarse(View v)
     {
-        Intent intentRegistro= new Intent(MainActivity.this, Registro.class);
+        Intent intentRegistro= new Intent(MainActivity.this, RegistroActivity.class);
         startActivity(intentRegistro);
     }
 }

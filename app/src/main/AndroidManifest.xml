@@ -10,7 +10,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SimonDice">
         <activity
-            android:name=".Registro"
+            android:name=".InstruccionesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".JuegoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MenuActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RegistroActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

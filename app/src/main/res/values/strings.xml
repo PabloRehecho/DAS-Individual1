@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ProyectoIndividual</string>
+    <string name="app_name">Simon Dice</string>
     <string name="TextViewPrincipal">Inicia sesión o registrate</string>
     <string name="EditTextUsuario">Usuario</string>
     <string name="EditTextContraseña">Contraseña</string>
@@ -10,4 +10,8 @@
     <string name="EditTextContraseñaNueva">Escribe la contraseña</string>
     <string name="EditTextRepetirContraseña">Repite la contraseña</string>
     <string name="BotonTerminarRegistro">Registrar Usuario</string>
+
+    <string name="BotonJugar">Jugar</string>
+    <string name="BotonMostrarInstrucciones">MostrarInstrucciones</string>
+    <string name="BotonPreferencias">Preferencias</string>
 </resources>
