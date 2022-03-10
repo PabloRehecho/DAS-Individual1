@@ -17,16 +17,18 @@ public class MenuActivity extends AppCompatActivity
     }
     public void onClickJugar(View v)
     {
-        Intent intentRegistro= new Intent(MenuActivity.this, JuegoActivity.class);
+        Intent intentRegistro= new Intent(this, JuegoActivity.class);
         startActivity(intentRegistro);
     }
     public void onClickMostrarInstrucciones(View v)
     {
-        Intent intentRegistro= new Intent(MenuActivity.this, InstruccionesActivity.class);
+        Intent intentRegistro= new Intent(this, InstruccionesActivity.class);
         startActivity(intentRegistro);
 
     }
     public void onClickPreferencias(View v)
     {
+        Intent intentRegistro= new Intent(this, UsuariosActivity.class);
+        startActivity(intentRegistro);
     }
 }

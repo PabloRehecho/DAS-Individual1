@@ -16,12 +16,12 @@ public class MainActivity extends AppCompatActivity
     }
     public void onClickIniciarSesion(View v)
     {
-        Intent intentRegistro= new Intent(MainActivity.this, MenuActivity.class);
+        Intent intentRegistro= new Intent(this, MenuActivity.class);
         startActivity(intentRegistro);
     }
     public void onClickRegistrarse(View v)
     {
-        Intent intentRegistro= new Intent(MainActivity.this, RegistroActivity.class);
+        Intent intentRegistro= new Intent(this, RegistroActivity.class);
         startActivity(intentRegistro);
     }
 }

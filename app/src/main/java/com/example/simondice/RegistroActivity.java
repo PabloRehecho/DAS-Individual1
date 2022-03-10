@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 public class RegistroActivity extends AppCompatActivity
 {
+    BaseDeDatos bd= new BaseDeDatos(this, "NombreBD", null, 1);
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -21,7 +22,10 @@ public class RegistroActivity extends AppCompatActivity
     {
         if (comprobarRequisitos())
         {
-            Intent intentTerminarRegistro= new Intent(RegistroActivity.this, MainActivity.class);
+            //Base de datos
+            DialogFragment dialogoAlerta= new Dialogos(12);
+            dialogoAlerta.show(getSupportFragmentManager(), "etiqueta");
+            Intent intentTerminarRegistro= new Intent(this, MainActivity.class);
             startActivity(intentTerminarRegistro);
         }
     }
@@ -35,11 +39,21 @@ public class RegistroActivity extends AppCompatActivity
         String usuarioNuevo = textViewUsuarioNuevo.getText().toString();
         String contraseña1 = textViewContraseña1.getText().toString();
         String contraseña2 = textViewContraseña2.getText().toString();
-        if (usuarioNuevo!="escogido")
+        if (!bd.existeUsuario(usuarioNuevo))
         {
-            if (contraseña1!=contraseña2)
+            if (contraseña1.equals(contraseña2))
             {
-                aceptar = true;
+                if (contraseña1.length()>=4)
+                {
+                    bd.crearUsuario(usuarioNuevo,contraseña1);
+                    aceptar = true;
+                }
+                else
+                {
+                    DialogFragment dialogoAlerta= new Dialogos(12);
+                    dialogoAlerta.show(getSupportFragmentManager(), "etiqueta");
+                }
+
             }
             else
             {
