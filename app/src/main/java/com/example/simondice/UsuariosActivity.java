@@ -9,7 +9,6 @@ import java.util.ArrayList;
 
 public class UsuariosActivity extends AppCompatActivity
 {
-
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -17,12 +16,13 @@ public class UsuariosActivity extends AppCompatActivity
         setContentView(R.layout.activity_usuarios);
 
         TextView textViewUsuarios= findViewById(R.id.TextViewUsuarios);
-        BaseDeDatos bd= new BaseDeDatos(this, "NombreBD", null, 1);
+        BaseDeDatos bd= BaseDeDatos.getInstance(this);
         ArrayList<String> lista = bd.mostrarUsuarios();
+        String todos="";
         for (int i = 0; i < lista.size(); i+=2)
         {
-            String actual = textViewUsuarios.getText().toString();
-            actual = actual + "--" + lista.get(i) + lista.get(i+1) + "\n";
+            todos = todos + "--" + lista.get(i) + " " + lista.get(i+1) + "\n";
         }
+        textViewUsuarios.setText(todos);
     }
 }

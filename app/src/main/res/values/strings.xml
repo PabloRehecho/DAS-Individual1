@@ -14,4 +14,5 @@
     <string name="BotonJugar">Jugar</string>
     <string name="BotonMostrarInstrucciones">MostrarInstrucciones</string>
     <string name="BotonPreferencias">Preferencias</string>
+    <string name="BotonMostrarUsuarios">Mostrar usuarios</string>
 </resources>

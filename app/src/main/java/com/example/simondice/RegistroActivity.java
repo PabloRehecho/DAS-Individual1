@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 public class RegistroActivity extends AppCompatActivity
 {
-    BaseDeDatos bd= new BaseDeDatos(this, "NombreBD", null, 1);
+    BaseDeDatos bd= BaseDeDatos.getInstance(this);
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -23,10 +23,10 @@ public class RegistroActivity extends AppCompatActivity
         if (comprobarRequisitos())
         {
             //Base de datos
-            DialogFragment dialogoAlerta= new Dialogos(12);
-            dialogoAlerta.show(getSupportFragmentManager(), "etiqueta");
             Intent intentTerminarRegistro= new Intent(this, MainActivity.class);
             startActivity(intentTerminarRegistro);
+            DialogFragment dialogoAlerta= new Dialogos(13);
+            dialogoAlerta.show(getSupportFragmentManager(), "etiqueta");
         }
     }
 
@@ -53,7 +53,6 @@ public class RegistroActivity extends AppCompatActivity
                     DialogFragment dialogoAlerta= new Dialogos(12);
                     dialogoAlerta.show(getSupportFragmentManager(), "etiqueta");
                 }
-
             }
             else
             {

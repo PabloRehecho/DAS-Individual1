@@ -16,8 +16,8 @@ public class MainActivity extends AppCompatActivity
     }
     public void onClickIniciarSesion(View v)
     {
-        Intent intentRegistro= new Intent(this, MenuActivity.class);
-        startActivity(intentRegistro);
+        Intent intentMenu= new Intent(this, MenuActivity.class);
+        startActivity(intentMenu);
     }
     public void onClickRegistrarse(View v)
     {

@@ -4,6 +4,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 import androidx.annotation.Nullable;
 
@@ -11,32 +12,51 @@ import java.util.ArrayList;
 
 public class BaseDeDatos extends SQLiteOpenHelper
 {
-    public BaseDeDatos(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version)
+    private static BaseDeDatos miBase;
+
+    public static synchronized BaseDeDatos getInstance(Context context)
     {
-        super(context, name, factory, version);
-        crearUsuario("admin", "admin");
+        if (miBase == null)
+        {
+            miBase = new BaseDeDatos(context);
+        }
+        return miBase;
+    }
+
+    private BaseDeDatos(@Nullable Context context)
+    {
+        super(context, "BaseDatos", null, 1);
+        //crearUsuario("admin", "admin");
     }
 
     @Override
-    public void onCreate(SQLiteDatabase sqLiteDatabase)
+    public void onCreate(SQLiteDatabase db)
     {
-        sqLiteDatabase.execSQL("CREATE TABLE Usuarios ('NombreUsuario' VARCHAR(255) PRIMARY KEY NOT NULL, 'Contraseña' VARCHAR(255))");
+        db.execSQL("CREATE TABLE Usuarios ('NombreUsuario' VARCHAR(255) PRIMARY KEY NOT NULL, 'Contraseña' VARCHAR(255))");
     }
 
     @Override
-    public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1){}
+    public void onUpgrade(SQLiteDatabase db, int i, int i1)
+    {
+        if (i != i1) {
+            // Simplest implementation is to drop all old tables and recreate them
+            db.execSQL("DROP TABLE IF EXISTS " + "Usuarios");
+            onCreate(db);
+        }
+    }
 
     public void crearUsuario(String nombreUsuario, String contraseña)
     {
+        Log.i("bd","crear");
         SQLiteDatabase bd = getWritableDatabase();
-        String sentencia = String.format("INSERT INTO Usuario VALUES ('%s' ,'%s')", nombreUsuario, contraseña);
+        String sentencia = String.format("INSERT INTO Usuarios VALUES ('%s' ,'%s')", nombreUsuario, contraseña);
         bd.execSQL(sentencia);
         bd.close();
     }
 
     public boolean existeUsuario(String nombreNuevo)
     {
-        SQLiteDatabase bd = getWritableDatabase();
+        SQLiteDatabase bd = getReadableDatabase();
         boolean encontrado=false;
         Cursor cu = bd.rawQuery("SELECT NombreUsuario FROM Usuarios", null);
         while (cu.moveToNext() && !encontrado)
@@ -47,13 +67,13 @@ public class BaseDeDatos extends SQLiteOpenHelper
         cu.close();
         bd.close();
         return encontrado;
-
     }
 
     public ArrayList<String> mostrarUsuarios()
     {
+        Log.i("bd","mostrar");
         ArrayList<String> listaUsuarios = new ArrayList<>();
-        SQLiteDatabase bd = getWritableDatabase();
+        SQLiteDatabase bd = getReadableDatabase();
         Cursor cu = bd.rawQuery("SELECT NombreUsuario, Contraseña FROM Usuarios", null);
         while (cu.moveToNext())
         {
