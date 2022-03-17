@@ -27,12 +27,12 @@ public class MenuActivity extends AppCompatActivity
     }
     public void onClickPreferencias(View v)
     {
-        //Intent intentPreferencias= new Intent(this, UsuariosActivity.class);
-        //startActivity(intentPreferencias);
+        Intent intentPreferencias= new Intent(this, PreferenciasActivity.class);
+        startActivity(intentPreferencias);
     }
     public void onClickMostrarUsuarios(View v)
     {
-        Intent intentUsuarios= new Intent(this, UsuariosActivity.class);
+        Intent intentUsuarios= new Intent(this, RankingActivity.class);
         startActivity(intentUsuarios);
     }
 

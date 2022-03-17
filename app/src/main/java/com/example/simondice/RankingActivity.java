@@ -7,13 +7,13 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class UsuariosActivity extends AppCompatActivity
+public class RankingActivity extends AppCompatActivity
 {
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_usuarios);
+        setContentView(R.layout.activity_ranking);
 
         TextView textViewUsuarios= findViewById(R.id.TextViewUsuarios);
         BaseDeDatos bd= BaseDeDatos.getInstance(this);

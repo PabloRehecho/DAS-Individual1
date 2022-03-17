@@ -2,7 +2,9 @@ package com.example.simondice;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 import java.io.BufferedReader;
@@ -12,7 +14,7 @@ import java.io.InputStreamReader;
 
 public class InstruccionesActivity extends AppCompatActivity
 {
-    String texto;
+    String texto="";
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -24,8 +26,8 @@ public class InstruccionesActivity extends AppCompatActivity
         BufferedReader buff = new BufferedReader(new InputStreamReader(fich));
         try
         {
-            String lineaActual = buff.readLine();
-            while (lineaActual != null)
+            String lineaActual;
+            while ((lineaActual = buff.readLine()) != null)
             {
                 texto = texto + lineaActual;
             }
@@ -36,5 +38,11 @@ public class InstruccionesActivity extends AppCompatActivity
         {
             e.printStackTrace();
         }
+    }
+
+    public void onClickVolver (View v)
+    {
+        Intent intentMenu= new Intent(this, MenuActivity.class);
+        startActivity(intentMenu);
     }
 }

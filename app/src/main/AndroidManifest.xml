@@ -10,7 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SimonDice">
         <activity
-            android:name=".UsuariosActivity"
+            android:name=".PreferenciasActivity"
+            android:exported="false" />
+        <activity
+            android:name=".FinalActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RankingActivity"
             android:exported="false" />
         <activity
             android:name=".InstruccionesActivity"

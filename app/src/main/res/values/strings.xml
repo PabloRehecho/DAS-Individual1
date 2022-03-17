@@ -1,5 +1,7 @@
 <resources>
+
     <string name="app_name">Simon Dice</string>
+
     <string name="TextViewPrincipal">Inicia sesión o registrate</string>
     <string name="EditTextUsuario">Usuario</string>
     <string name="EditTextContraseña">Contraseña</string>
@@ -15,4 +17,9 @@
     <string name="BotonMostrarInstrucciones">MostrarInstrucciones</string>
     <string name="BotonPreferencias">Preferencias</string>
     <string name="BotonMostrarUsuarios">Mostrar usuarios</string>
+
+    <string name="TextViewInstrucciones">Instrucciones del juego:</string>
+    <string name="BotonVolver">Volver al menú</string>
+
+    <string name="TextViewSecuencia">Secuencia a repetir:</string>
 </resources>

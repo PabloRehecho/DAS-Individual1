@@ -22,7 +22,11 @@ public class RegistroActivity extends AppCompatActivity
     {
         if (comprobarRequisitos())
         {
-            //Base de datos
+            TextView textViewUsuarioNuevo= findViewById(R.id.EditTextUsuarioNuevo);
+            TextView textViewContraseña1= findViewById(R.id.EditTextContraseñaNueva);
+            String usuarioNuevo = textViewUsuarioNuevo.getText().toString();
+            String contraseña1 = textViewContraseña1.getText().toString();
+            bd.crearUsuario(usuarioNuevo, contraseña1);
             Intent intentTerminarRegistro= new Intent(this, MainActivity.class);
             startActivity(intentTerminarRegistro);
             DialogFragment dialogoAlerta= new Dialogos(13);

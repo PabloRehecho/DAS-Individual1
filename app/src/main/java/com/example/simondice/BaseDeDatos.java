@@ -13,6 +13,7 @@ import java.util.ArrayList;
 public class BaseDeDatos extends SQLiteOpenHelper
 {
     private static BaseDeDatos miBase;
+    private static String usuarioActual;
 
     public static synchronized BaseDeDatos getInstance(Context context)
     {
@@ -62,11 +63,40 @@ public class BaseDeDatos extends SQLiteOpenHelper
         while (cu.moveToNext() && !encontrado)
         {
             String nombre = cu.getString(0);
-            if (nombre.equals(nombreNuevo)) {encontrado=true;}
+            if (nombre.equals(nombreNuevo))
+            {
+                encontrado=true;
+            }
         }
         cu.close();
         bd.close();
         return encontrado;
+    }
+
+    public boolean usuarioCorrecto(String pUsuario, String pContraseña)
+    {
+        Log.i("bd","usuarioCorrecto");
+        SQLiteDatabase bd = getReadableDatabase();
+        boolean encontrado = false;
+        boolean coinciden = false;
+        Cursor cu = bd.rawQuery("SELECT NombreUsuario, Contraseña FROM Usuarios", null);
+        while (cu.moveToNext() && !encontrado)
+        {
+            String nombre = cu.getString(0);
+            String contraseña = cu.getString(1);
+            if (nombre.equals(pUsuario))
+            {
+                encontrado=true;
+                if (contraseña.equals(pContraseña))
+                {
+                    coinciden = true;
+                }
+
+            }
+        }
+        cu.close();
+        bd.close();
+        return coinciden;
     }
 
     public ArrayList<String> mostrarUsuarios()
@@ -85,5 +115,15 @@ public class BaseDeDatos extends SQLiteOpenHelper
         cu.close();
         bd.close();
         return listaUsuarios;
+    }
+
+    public String getUsuarioActual()
+    {
+        return usuarioActual;
+    }
+
+    public void setUsuarioActual(String user)
+    {
+        usuarioActual = user;
     }
 }

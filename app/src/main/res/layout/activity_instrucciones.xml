@@ -7,11 +7,35 @@
     tools:context=".InstruccionesActivity">
 
     <TextView
+        android:id="@+id/textViewTituloInstrucciones"
+        android:layout_width="389dp"
+        android:layout_height="82dp"
+        android:text="@string/TextViewInstrucciones"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.12" />
+
+    <TextView
         android:id="@+id/TextViewInstrucciones"
-        android:layout_width="240dp"
-        android:layout_height="330dp"
+        android:layout_width="299dp"
+        android:layout_height="412dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewTituloInstrucciones"
+        app:layout_constraintVertical_bias="0.232" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/BotonVolver"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TextViewInstrucciones" />
 </androidx.constraintlayout.widget.ConstraintLayout>

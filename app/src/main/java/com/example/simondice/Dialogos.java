@@ -25,6 +25,12 @@ public class Dialogos extends DialogFragment {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         switch(code)
         {
+            case 0 :
+                crearDialogo0(builder);
+                break;
+            case 1 :
+                crearDialogo1(builder);
+                break;
             case 10 :
                 crearDialogo10(builder);
                 break;
@@ -52,6 +58,19 @@ public class Dialogos extends DialogFragment {
     private AlertDialog.Builder crearDialogoIndefinido(AlertDialog.Builder builder)
     {
         builder.setMessage("ERROR/ DIALOGO INDEFINIDO");
+        return builder;
+    }
+
+    private AlertDialog.Builder crearDialogo0(AlertDialog.Builder builder)
+    {
+        builder.setTitle("Usuario erroneo");
+        builder.setMessage("Usuario no está en el sistema");
+        return builder;
+    }
+    private AlertDialog.Builder crearDialogo1(AlertDialog.Builder builder)
+    {
+        builder.setTitle(" Contraseña erronea");
+        builder.setMessage("Contraseña incorrecta para este usuario");
         return builder;
     }
     private AlertDialog.Builder crearDialogo10(AlertDialog.Builder builder)
