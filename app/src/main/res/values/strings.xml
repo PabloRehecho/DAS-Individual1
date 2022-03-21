@@ -21,5 +21,6 @@
     <string name="TextViewInstrucciones">Instrucciones del juego:</string>
     <string name="BotonVolver">Volver al menú</string>
 
+    <string name="BotonEmpezar">Empezar</string>
     <string name="TextViewSecuencia">Secuencia a repetir:</string>
 </resources>
