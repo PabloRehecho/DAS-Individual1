@@ -8,6 +8,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.DialogFragment;
 
+//clase que crea los Dialogs que se encuentran a través de la aplicación
 public class Dialogos extends DialogFragment {
     private int code = -1;
 
@@ -17,6 +18,7 @@ public class Dialogos extends DialogFragment {
         code = tipo;
     }
 
+    //este método determina que Dialog hay que mostrar
     //@NonNull
     //@Override
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState)
@@ -47,7 +49,7 @@ public class Dialogos extends DialogFragment {
                 crearDialogoIndefinido(builder);
                 break;
         }
-        builder.setPositiveButton("Entendido", new DialogInterface.OnClickListener()
+        builder.setPositiveButton(getResources().getString(R.string.Entendido), new DialogInterface.OnClickListener()
         {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {}
@@ -57,44 +59,44 @@ public class Dialogos extends DialogFragment {
 
     private AlertDialog.Builder crearDialogoIndefinido(AlertDialog.Builder builder)
     {
-        builder.setMessage("ERROR/ DIALOGO INDEFINIDO");
+        builder.setMessage(getResources().getString(R.string.DialogError));
         return builder;
     }
 
     private AlertDialog.Builder crearDialogo0(AlertDialog.Builder builder)
     {
-        builder.setTitle("Usuario erroneo");
-        builder.setMessage("Usuario no está en el sistema");
+        builder.setTitle(getResources().getString(R.string.Dialogo0Titulo));
+        builder.setMessage(getResources().getString(R.string.Dialogo0Texto));
         return builder;
     }
     private AlertDialog.Builder crearDialogo1(AlertDialog.Builder builder)
     {
-        builder.setTitle(" Contraseña erronea");
-        builder.setMessage("Contraseña incorrecta para este usuario");
+        builder.setTitle(getResources().getString(R.string.Dialogo1Titulo));
+        builder.setMessage(getResources().getString(R.string.Dialogo1Texto));
         return builder;
     }
     private AlertDialog.Builder crearDialogo10(AlertDialog.Builder builder)
     {
-        builder.setTitle(" Usuario incorrecto");
-        builder.setMessage("Nombre de usuario ya escogido, introduzca otro");
+        builder.setTitle(getResources().getString(R.string.Dialogo10Titulo));
+        builder.setMessage(getResources().getString(R.string.Dialogo10Texto));
         return builder;
     }
     private AlertDialog.Builder crearDialogo11(AlertDialog.Builder builder)
     {
-        builder.setTitle("Contraseñas erroneas");
-        builder.setMessage("Ambas contraseñas tienen que coincidir");
+        builder.setTitle(getResources().getString(R.string.Dialogo11Titulo));
+        builder.setMessage(getResources().getString(R.string.Dialogo11Texto));
         return builder;
     }
     private AlertDialog.Builder crearDialogo12(AlertDialog.Builder builder)
     {
-        builder.setTitle("Contraseña corta");
-        builder.setMessage("La contraseña tiene que tener al menos 4 caracteres");
+        builder.setTitle(getResources().getString(R.string.Dialogo12Titulo));
+        builder.setMessage(getResources().getString(R.string.Dialogo12Texto));
         return builder;
     }
     private AlertDialog.Builder crearDialogo13(AlertDialog.Builder builder)
     {
-        builder.setTitle("Éxito");
-        builder.setMessage("Usuario creado correctamente");
+        builder.setTitle(getResources().getString(R.string.Dialogo13Titulo));
+        builder.setMessage(getResources().getString(R.string.Dialogo13Texto));
         return builder;
     }
 }

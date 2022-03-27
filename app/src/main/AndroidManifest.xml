@@ -17,9 +17,11 @@
             android:exported="false" />
         <activity
             android:name=".RankingActivity"
+            android:theme="@style/TemaDAS"
             android:exported="false" />
         <activity
             android:name=".InstruccionesActivity"
+            android:theme="@style/TemaDAS"
             android:exported="false" />
         <activity
             android:name=".JuegoActivity"

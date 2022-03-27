@@ -2,25 +2,76 @@
 
     <string name="app_name">Simon Dice</string>
 
+    <!--MainActivity-->
     <string name="TextViewPrincipal">Inicia sesión o registrate</string>
     <string name="EditTextUsuario">Usuario</string>
     <string name="EditTextContraseña">Contraseña</string>
     <string name="BotonIniciarSesión">Iniciar Sesión</string>
     <string name="BotonRegistrarse">Registrarse</string>
 
+    <!--RegistroActivity-->
     <string name="EditTextUsuarioNuevo">Escribe un nombre de usuario</string>
     <string name="EditTextContraseñaNueva">Escribe la contraseña</string>
     <string name="EditTextRepetirContraseña">Repite la contraseña</string>
     <string name="BotonTerminarRegistro">Registrar Usuario</string>
 
+    <!--MenuActivity-->
     <string name="BotonJugar">Jugar</string>
-    <string name="BotonMostrarInstrucciones">MostrarInstrucciones</string>
+    <string name="BotonMostrarInstrucciones">Mostrar instrucciones</string>
     <string name="BotonPreferencias">Preferencias</string>
-    <string name="BotonMostrarUsuarios">Mostrar usuarios</string>
+    <string name="BotonMostrarUsuarios">Mostrar ranking</string>
 
+    <!--InstruccionesActivity-->
     <string name="TextViewInstrucciones">Instrucciones del juego:</string>
     <string name="BotonVolver">Volver al menú</string>
 
+    <!--JuegoActivity-->
     <string name="BotonEmpezar">Empezar</string>
-    <string name="TextViewSecuencia">Secuencia a repetir:</string>
+    <string name="TextViewSecuencia">último elemento</string>
+
+    <!--FinalActivity-->
+    <string name="FinalTitulo">Secuencia completa</string>
+    <string name="AyudaFinal">Elemento número </string>
+    <string name="Rojo">Rojo</string>
+    <string name="Azul">Azul</string>
+    <string name="Verde">Verde</string>
+    <string name="Amarillo">Amarillo</string>
+    <string name="Cuadrado">Cuadrado</string>
+    <string name="Circulo">Círculo</string>
+    <string name="Equis">Equis</string>
+    <string name="Triangulo">Triángulo</string>
+    <string name="BotonMail">Compartir con tus amigos</string>
+    <string name="TextoMail">Prueba a jugar este juego! Se llama Simón Dice y es muy divertido.</string>
+    <string name="TituloMail">Enviar correo...</string>
+    <string name="ProblemaMail">No hay ninguna aplicaión que pueda enviar el mail</string>
+
+    <!--Preferencias-->
+    <string name="IdiomasTexto">Cambia el idioma de la aplicación a inglés</string>
+    <string name="DaltonicoTexto">Activar modo daltónico</string>
+
+
+    <!--Notificaciones-->
+    <string name="NotificacionRegistroTitulo">Usuario correctamente registrado</string>
+    <string name="NotificacionRegistroSubTexto">Registrado</string>
+    <string name="NotificacionGameOverTitulo">Has fallado al repetir la secuencia</string>
+    <string name="NotificacionGameOverSubTexto">Game Over</string>
+
+    <!--fichero-->
+
+
+    <!--Dialogs-->
+    <string name="Entendido">Entendido</string>
+    <string name="DialogError">ERROR/ DIALOGO INDEFINIDO</string>
+    <string name="Dialogo0Titulo">Usuario erroneo</string>
+    <string name="Dialogo0Texto">Usuario no está en el sistema</string>
+    <string name="Dialogo1Titulo">Contraseña erronea</string>
+    <string name="Dialogo1Texto">Contraseña incorrecta para este usuario</string>
+    <string name="Dialogo10Titulo">Usuario incorrecto</string>
+    <string name="Dialogo10Texto">Nombre de usuario ya escogido, introduzca otro</string>
+    <string name="Dialogo11Titulo">Contraseñas erroneas</string>
+    <string name="Dialogo11Texto">Ambas contraseñas tienen que coincidir</string>
+    <string name="Dialogo12Titulo">Contraseña corta</string>
+    <string name="Dialogo12Texto">La contraseña tiene que tener al menos 4 caracteres</string>
+    <string name="Dialogo13Titulo">Éxito</string>
+    <string name="Dialogo13Texto">Usuario creado correctamente</string>
 </resources>
