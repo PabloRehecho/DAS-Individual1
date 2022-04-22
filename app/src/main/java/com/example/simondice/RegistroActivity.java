@@ -66,7 +66,7 @@ public class RegistroActivity extends AppCompatActivity
             {
                 if (contraseña1.length()>=4)
                 {
-                    bd.crearUsuario(usuarioNuevo,contraseña1);
+                    //bd.crearUsuario(usuarioNuevo,contraseña1);
                     aceptar = true;
                 }
                 else
